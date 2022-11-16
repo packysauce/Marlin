@@ -1,0 +1,16 @@
+project_name: marlin
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/python:3
+    entrypoint:
+      - sleep
+      - infinity
+    volumes:
+      - .:/code
+      - platformio-cache:/root/.platformio
+
+volumes:
+  # This volume holds installed libraries for PlatformIO. If this is deleted you
+  # will have to download all the dependencies again, which can be a very slow
+  # process
+  platformio-cache:
